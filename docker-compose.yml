@@ -1,0 +1,13 @@
+services:
+  anabel-app:
+    build: .
+    container_name: anabel
+    ports:
+      - "3838:3838"
+    networks:
+      - taskchampion-sync-server_default
+    restart: unless-stopped
+
+networks:
+  taskchampion-sync-server_default:
+    external: true
